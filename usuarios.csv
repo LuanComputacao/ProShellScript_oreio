@@ -1,0 +1,40 @@
+login,usuario
+root,root
+daemon,daemon
+bin,bin
+sys,sys
+sync,sync
+games,games
+man,man
+lp,lp
+mail,mail
+news,news
+uucp,uucp
+proxy,proxy
+www-data,www-data
+backup,backup
+list,Mailing List Manager
+irc,ircd
+gnats,Gnats Bug-Reporting System (admin)
+nobody,nobody
+libuuid,
+syslog,
+messagebus,
+usbmux,usbmux daemon
+dnsmasq,dnsmasq
+avahi-autoipd,Avahi autoip daemon
+kernoops,Kernel Oops Tracking Daemon
+rtkit,RealtimeKit
+saned,
+whoopsie,
+speech-dispatcher,Speech Dispatcher
+avahi,Avahi mDNS daemon
+lightdm,Light Display Manager
+colord,colord colour management daemon
+hplip,HPLIP system user
+pulse,PulseAudio daemon
+luancomputacao,Luan R. S. Santana
+guest-nVIWiH,Guest
+guest-neKqpu,Guest
+guest-ISEOZf,Guest
+statd,
