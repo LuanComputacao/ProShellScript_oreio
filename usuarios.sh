@@ -14,6 +14,11 @@
 # Versão 5: Adiciona a opção -s e --sort
 # Versão 6: Adicionando as opções -r, --reverse, -u, --uppercase,
 #           leitura de múltiplas opções loop
+# Versão 7: Melhorias na legibilidade do código e adição das opções
+#           -d e --delimiter
+#
+#
+#
 #
 #
 
@@ -23,6 +28,7 @@ Uso: $(basename $0) [-h | -V]
 -r, --reverse       Inverte a listagem
 -u, --uppercase     Mostra a listagem em MAIÚSCULAS
 -s, --sort          Ordena a listagem alfabeticamente
+-d, --delimiter C   Usa o caractere C como delimitador
 -h, --help          Mostra esta tela de ajuda e sai
 -V, --version       Mostra a versão do programa e sai
 -e                  Exporta o conteudo para um arquivo CSV
@@ -36,23 +42,26 @@ miusculas=0
 while test -n "$1"
 do
     case "$1" in
-        -r | --reverse)
-            inverte=1
-        ;;
+        -s | --sort     ) ordenar=1     ;;
+        -r | --reverse  ) inverte=1     ;;
+        -u | --uppercase) maiusculas=1  ;;
 
-        -u | --uppercase)
-            maiusculas=1
-        ;;
-        -s | --sort)
-            ordenar=1
-        ;;
+        -d | --delimiter)
+                            shift
+                            delim="$1"
 
-        -h | --help)
-            echo "$MENSAGEM_USO"
-            exit 0
-        ;;
+                            if test -z "$delim"
+                            then
+                                echo "Faltou o argumento para a -d | --delimiter $MENSAGEM_USO"
+                                exit 1
+                            fi
+                        ;;
 
-        -V | --version)
+        -h | --help     )
+                            echo "$MENSAGEM_USO"
+                            exit 0
+                        ;;
+        -V | --version  )
             echo -n $(basename $0)
             # Extrai a versão diretamente dos cabeçalhos do programa
             grep '^# Versão ' usuarios.sh | tail -1 | cut -d : -f 1 | tr -d '# '
@@ -66,19 +75,16 @@ do
                 exit 1
             fi
         ;;
-        # echo "login,usuario" > usuarios.csv
-        # cut -d : -f 1,5 /etc/passwd | tr -d , | tr : , >> usuarios.csv
     esac
 
     # Opção $1 já processada, a fila deve andar
     shift
-
 done
 
 
 
-#Extrai a listagem
-lista=$(cut -d : -f 1,5 /etc/passwd | tr -d , | tr : \\t)
+#Extrai a listagem, remove as virgulas desnecessárias e substitui os : por um TAB
+lista=$(cut -d : -f 1,5 /etc/passwd | tr -d ,)
 
 #Ordena a listagem (se necessário)
 if test "$ordenar" = 1
@@ -98,4 +104,4 @@ then
     lista=$(echo "$lista" | tr a-z A-Z)
 fi
 
-echo "$lista"
+echo "$lista" | tr : "$delim"
