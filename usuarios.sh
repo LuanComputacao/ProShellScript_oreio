@@ -73,6 +73,7 @@ do
             then
                 echo "Oção invalida"
                 exit 1
+                
             fi
         ;;
     esac
@@ -86,22 +87,10 @@ done
 #Extrai a listagem, remove as virgulas desnecessárias e substitui os : por um TAB
 lista=$(cut -d : -f 1,5 /etc/passwd | tr -d ,)
 
-#Ordena a listagem (se necessário)
-if test "$ordenar" = 1
-then
-    lista=$(echo "$lista" | sort)
-fi
+# Converte os caracteres de minúsculas para maiúsculas, ordena ou inverte a listagem (se necessário)
+test "$ordenar"         = 1 &&  lista=$(echo "$lista" | sort)
+test "$inverte"         = 1 &&  lista=$(echo "$lista" | tac)
+test "$maiusculas"      = 1 &&  lista=$(echo "$lista" | tr a-z A-Z)
 
-# Inverte a listagem (se necessário)
-if test "$inverte" = 1
-then
-    lista=$(echo "$lista" | tac)
-fi
-
-# Converte minúsculas para maiúsculas
-if test "$maiusculas" = 1
-then
-    lista=$(echo "$lista" | tr a-z A-Z)
-fi
 
 echo "$lista" | tr : "$delim"

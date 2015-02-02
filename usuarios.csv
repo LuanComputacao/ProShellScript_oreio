@@ -1,40 +1,39 @@
-login,usuario
-root,root
-daemon,daemon
-bin,bin
-sys,sys
-sync,sync
-games,games
-man,man
-lp,lp
-mail,mail
-news,news
-uucp,uucp
-proxy,proxy
-www-data,www-data
-backup,backup
-list,Mailing List Manager
-irc,ircd
-gnats,Gnats Bug-Reporting System (admin)
-nobody,nobody
-libuuid,
-syslog,
-messagebus,
-usbmux,usbmux daemon
-dnsmasq,dnsmasq
-avahi-autoipd,Avahi autoip daemon
-kernoops,Kernel Oops Tracking Daemon
-rtkit,RealtimeKit
-saned,
-whoopsie,
-speech-dispatcher,Speech Dispatcher
-avahi,Avahi mDNS daemon
-lightdm,Light Display Manager
-colord,colord colour management daemon
-hplip,HPLIP system user
-pulse,PulseAudio daemon
-luancomputacao,Luan R. S. Santana
-guest-nVIWiH,Guest
-guest-neKqpu,Guest
-guest-ISEOZf,Guest
-statd,
+WWW-DATA,WWW-DATA
+WHOOPSIE,
+UUCP,UUCP
+USBMUX,USBMUX DAEMON
+SYS,SYS
+SYSLOG,
+SYNC,SYNC
+STATD,
+SPEECH-DISPATCHER,SPEECH DISPATCHER
+SANED,
+RTKIT,REALTIMEKIT
+ROOT,ROOT
+PULSE,PULSEAUDIO DAEMON
+PROXY,PROXY
+NOBODY,NOBODY
+NEWS,NEWS
+MESSAGEBUS,
+MAN,MAN
+MAIL,MAIL
+LUANCOMPUTACAO,LUAN R. S. SANTANA
+LP,LP
+LIST,MAILING LIST MANAGER
+LIGHTDM,LIGHT DISPLAY MANAGER
+LIBUUID,
+KERNOOPS,KERNEL OOPS TRACKING DAEMON
+IRC,IRCD
+HPLIP,HPLIP SYSTEM USER
+GUEST-NVIWIH,GUEST
+GUEST-NEKQPU,GUEST
+GUEST-ISEOZF,GUEST
+GNATS,GNATS BUG-REPORTING SYSTEM (ADMIN)
+GAMES,GAMES
+DNSMASQ,DNSMASQ
+DAEMON,DAEMON
+COLORD,COLORD COLOUR MANAGEMENT DAEMON
+BIN,BIN
+BACKUP,BACKUP
+AVAHI,AVAHI MDNS DAEMON
+AVAHI-AUTOIPD,AVAHI AUTOIP DAEMON
