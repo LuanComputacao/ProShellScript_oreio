@@ -73,7 +73,7 @@ do
             then
                 echo "Oção invalida"
                 exit 1
-                
+
             fi
         ;;
     esac
